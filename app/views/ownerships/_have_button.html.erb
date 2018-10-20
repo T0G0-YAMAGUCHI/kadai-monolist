@@ -1,5 +1,5 @@
 <% if current_user.have?(item) %>
-  <%= form_tag(ownership_path(item.id),method: :delete) do %>
+  <%= form_tag(ownership_path(item.id) , method: :delete) do %>
     <%= hidden_field_tag :item_id , item.id %>
     <%= hidden_field_tag :type , "Have" %>
     <%= submit_tag :"Unhave", class:"btn btn-success" %>

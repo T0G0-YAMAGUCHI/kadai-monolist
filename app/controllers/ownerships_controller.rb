@@ -23,11 +23,11 @@ class OwnershipsController < ApplicationController
   def destroy
     @item=Item.find(params[:item_id])
     
-    if params[:type]="Want"
+    if params[:type] == "Want"
       current_user.unwant(@item)
       flash[:success]="商品のWantを解除しました"
       
-    elsif params[:type]="Have"
+    elsif params[:type] == "Have"
       current_user.unhave(@item)
       flash[:success]="商品のHaveを解除しました"
     end
